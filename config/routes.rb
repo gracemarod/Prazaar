@@ -6,10 +6,6 @@ Rails.application.routes.draw do
   # root 'welcome#index'
 
   Rails.application.routes.draw do
-    root             'static_pages#home'
-    get 'about'   => 'static_pages#about'
-    get 'featured' => 'static_pages#featured'
-    get 'store'  => 'register'
     resources :users
   end
   # Example of regular route:

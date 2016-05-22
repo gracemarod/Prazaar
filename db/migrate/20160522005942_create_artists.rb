@@ -5,6 +5,7 @@ class CreateArtists < ActiveRecord::Migration
       t.string :username
       t.string :name
       t.string :email
+      t.string :password
 
       t.timestamps null: false
     end

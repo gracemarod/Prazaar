@@ -105,10 +105,15 @@
                 
                 </div><!--.nav-collapse -->
             </div>
-        </nav><!--navbar end-->         
+        </nav><!--navbar end-->
+     <body>
+     
+    <div class="container">
+      <%= yield %>
+    </div>        
+     </header><!--header end-->
+   
 
-
-<%= yield %>
-
+<%= debug(params) if Rails.env.development? %>
 </body>
 </html>
