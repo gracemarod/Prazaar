@@ -97,7 +97,7 @@
                         <li><a href="#featured"><span class="btnicon icon-cup"></span>Featured Work</a></li>
                         <li><a href="#register"><span class="btnicon icon-bubble"></span>Register</a></li>
                         
-                        <!--don't forget to replace my email address below with yours-->
+                      
                         <!-- <li><a href="mailto:m@creatrix.us"><span class="btnicon icon-envelope-open"></span>Contact</a></li> -->
                         <!-- <li class="active"><a href=""><span class="btnicon icon-cloud-download"></span>Download CV</a></li> -->
                     </ul>
@@ -105,7 +105,13 @@
                 </div><!--.nav-collapse -->
             </div>
         </nav><!--navbar end-->        
-     </header><!--header end-->     
+     </header><!--header end-->
+     <%= render 'layouts/header' %>
+     <div class="container">
+     	<%= yield %>
+     	<%= render 'layouts/footer' %>
+     	<%= debug(params) if Rails.env.development? %>
+     </div>    
 
 
 <%= yield %>
