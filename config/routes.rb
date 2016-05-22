@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     resources :users
     resources :artists
     resources :artworks
+    get "artworks/new"
     root 'artworks#index'
   end
   # Example of regular route:
