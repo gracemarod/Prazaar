@@ -28,7 +28,9 @@ Rails.application.routes.draw do
     resources :users
     resources :artists
     resources :artworks
-    root 'artworks#index'
+
+    get "artworks/new"
+    #root 'artworks#index'
   end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
