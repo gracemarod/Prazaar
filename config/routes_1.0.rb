@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  resources :artworks
+<<<<<<< HEAD
   get 'session/new'
 
+=======
+  resources :artworks
+>>>>>>> 18e9ec2c589dc8eb8592018d29c5b339ad224996
   get 'artists/new'
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -11,7 +14,12 @@ Rails.application.routes.draw do
   # root 'welcome#index'
 
   Rails.application.routes.draw do
+<<<<<<< HEAD
+  get 'session/new'
+
+=======
   resources :artworks
+>>>>>>> 18e9ec2c589dc8eb8592018d29c5b339ad224996
   get 'artists/new'
 
     # root             'static_pages#home'
@@ -22,15 +30,11 @@ Rails.application.routes.draw do
     get 'featured'   => 'static_pages#featured'
     get 'signup'  => 'users#new'
     get 'signupArt'  => 'artists#new'
-    get    'login'   => 'session#new'
-    post   'login'   => 'session#create'
-    delete 'logout'  => 'session#destroy'
+    get    'login'   => 'sessions#new'
+    post   'login'   => 'sessions#create'
+    delete 'logout'  => 'sessions#destroy'
     resources :users
     resources :artists
-    resources :artworks
-
-    get "artworks/new"
-    #root 'artworks#index'
   end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

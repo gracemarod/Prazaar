@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
   resources :artworks
-  get 'session/new'
-
   get 'artists/new'
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -22,15 +20,16 @@ Rails.application.routes.draw do
     get 'featured'   => 'static_pages#featured'
     get 'signup'  => 'users#new'
     get 'signupArt'  => 'artists#new'
+<<<<<<< HEAD
     get    'login'   => 'session#new'
     post   'login'   => 'session#create'
     delete 'logout'  => 'session#destroy'
+=======
+>>>>>>> bc9631a30872bc67e47c34e91ddfe1d4e09a1ab5
     resources :users
     resources :artists
     resources :artworks
-
-    get "artworks/new"
-    #root 'artworks#index'
+    root 'artworks#index'
   end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
