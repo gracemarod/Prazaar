@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'artists/new'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   root 'home#index'
@@ -6,6 +8,16 @@ Rails.application.routes.draw do
   # root 'welcome#index'
 
   Rails.application.routes.draw do
+  get 'artists/new'
+
+    # root             'static_pages#home'
+    # get 'about'   => 'static_pages#about'
+    # get 'featured' => 'static_pages#featured'
+    # get 'store'  => 'register'
+    get 'about'   => 'static_pages#about'
+    get 'featured'   => 'static_pages#featured'
+    get 'signup'  => 'users#new'
+    get 'signup'  => 'artists#new'
     resources :users
   end
   # Example of regular route:
