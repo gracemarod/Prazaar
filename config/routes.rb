@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   # root 'welcome#index'
 
   Rails.application.routes.draw do
+  resources :artworks
   get 'artists/new'
 
     # root             'static_pages#home'
@@ -26,6 +27,8 @@ Rails.application.routes.draw do
     delete 'logout'  => 'session#destroy'
     resources :users
     resources :artists
+    resources :artworks
+    root 'artworks#index'
   end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
