@@ -1,13 +1,13 @@
 class ArtistsController < ApplicationController
   def show
-    @artist = artist.find(params[:id])
+    @artist = Artist.find(params[:id])
   end
 
   def new
-    @artist = artist.new
+    @artist = Artist.new
   end
   def create
-  	@artist = artist.new(artist_params)
+  	@artist = Artist.new(artist_params)
   	if @artist.save
   		flash[:success] = "Welcome to Prazaar!"
   		redirect_to @artist

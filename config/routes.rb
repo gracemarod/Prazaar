@@ -17,8 +17,9 @@ Rails.application.routes.draw do
     get 'about'   => 'static_pages#about'
     get 'featured'   => 'static_pages#featured'
     get 'signup'  => 'users#new'
-    get 'signup'  => 'artists#new'
+    get 'signupArt'  => 'artists#new'
     resources :users
+    resources :artists
   end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
