@@ -98,18 +98,25 @@
                         <li><a href="/store"><span class="btnicon icon-cup"></span>Artwork Store</a></li>
                         <li><a href="#register"><span class="btnicon icon-bubble"></span>Register</a></li>
                         
-                        <!--don't forget to replace my email address below with yours-->
+                      
                         <!-- <li><a href="mailto:m@creatrix.us"><span class="btnicon icon-envelope-open"></span>Contact</a></li> -->
                         <!-- <li class="active"><a href=""><span class="btnicon icon-cloud-download"></span>Download CV</a></li> -->
                     </ul>
                 
                 </div><!--.nav-collapse -->
+                <div class="container">
+               		<% flash.each do |message_type, message| %>
+  					<div class="alert alert-<%= message_type %>"><%= message %></div>
+					<% end %>
+				</div>
             </div>
-        </nav><!--navbar end-->        
-     </header><!--header end-->     
+        </nav><!--navbar end-->
 
 
-<%= yield %>
+      <%= yield %>       
+     </header><!--header end-->
+   
 
+<%= debug(params) if Rails.env.development? %>
 </body>
 </html>

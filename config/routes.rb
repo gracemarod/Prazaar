@@ -1,10 +1,26 @@
 Rails.application.routes.draw do
+  get 'artists/new'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   root 'home#index'
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
+  Rails.application.routes.draw do
+  get 'artists/new'
+
+    # root             'static_pages#home'
+    # get 'about'   => 'static_pages#about'
+    # get 'featured' => 'static_pages#featured'
+    # get 'store'  => 'register'
+    get 'about'   => 'static_pages#about'
+    get 'featured'   => 'static_pages#featured'
+    get 'signup'  => 'users#new'
+    get 'signupArt'  => 'artists#new'
+    resources :users
+    resources :artists
+  end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
