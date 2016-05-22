@@ -22,6 +22,8 @@ Rails.application.routes.draw do
     get 'signupArt'  => 'artists#new'
     resources :users
     resources :artists
+    resources :artworks
+    root 'artworks#index'
   end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
