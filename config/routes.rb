@@ -21,9 +21,9 @@ Rails.application.routes.draw do
     get 'featured'   => 'static_pages#featured'
     get 'signup'  => 'users#new'
     get 'signupArt'  => 'artists#new'
-    get    'login'   => 'sessions#new'
-    post   'login'   => 'sessions#create'
-    delete 'logout'  => 'sessions#destroy'
+    get    'login'   => 'session#new'
+    post   'login'   => 'session#create'
+    delete 'logout'  => 'session#destroy'
     resources :users
     resources :artists
   end
