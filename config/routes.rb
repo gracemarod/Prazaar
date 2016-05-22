@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :artworks
   get 'session/new'
 
   get 'artists/new'
@@ -10,8 +11,6 @@ Rails.application.routes.draw do
   # root 'welcome#index'
 
   Rails.application.routes.draw do
-  get 'session/new'
-
   get 'artists/new'
 
     # root             'static_pages#home'
