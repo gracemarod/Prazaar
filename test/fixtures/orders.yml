@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  total: 1.5
+  quantity: 1
+  artworkID: 1
+  userID: 1
+  artistID: 1
+
+two:
+  total: 1.5
+  quantity: 1
+  artworkID: 1
+  userID: 1
+  artistID: 1

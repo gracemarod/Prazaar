@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :orders
   resources :artworks
   resources :artworks
   resources :artworks
@@ -14,6 +15,7 @@ Rails.application.routes.draw do
   # root 'welcome#index'
 
   Rails.application.routes.draw do
+  resources :orders
   resources :artworks
   resources :artworks
   resources :artworks

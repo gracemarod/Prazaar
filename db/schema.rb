@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160523063718) do
+ActiveRecord::Schema.define(version: 20160523070759) do
 
   create_table "artists", force: :cascade do |t|
     t.string   "username"
@@ -35,6 +35,16 @@ ActiveRecord::Schema.define(version: 20160523063718) do
     t.string   "category"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.float    "total"
+    t.integer  "quantity"
+    t.integer  "artworkID"
+    t.integer  "userID"
+    t.integer  "artistID"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
