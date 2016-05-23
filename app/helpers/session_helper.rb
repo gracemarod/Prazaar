@@ -13,10 +13,30 @@ module SessionHelper
   def logged_in?
     !current_user.nil?
   end
-  
-    # Logs out the current user.
+
+
+
+  # Logs in the given artist.
+  def log_in(artist)
+    session[:artist_id] = artist.id
+  end
+
+  def current_artist
+    @current_artist ||= Artist.find_by(id: session[:artist_id])
+  end
+
+    # Returns true if the user is logged in, false otherwise.
+  def logged_in?
+    !current_artist.nil?
+  end
+
+  # Logs out the current user.
   def log_out
     session.delete(:user_id)
+    session.delete(:artist_id)
     @current_user = nil
-  end  
+    @current_artist = nil
+
+  end 
+ 
 end
