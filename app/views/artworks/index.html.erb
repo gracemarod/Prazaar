@@ -18,15 +18,16 @@
     </tr>
   </thead>
   <tbody>
-    <% @artworks.each do |artwork| %>
-      <tr>
+      <% @artworks.each do |artwork| %>
+          <% @foto_name = artwork.photos%>
+    <tr>
         <td><%= link_to artwork.id, artwork_path(artwork) %></td>
         <td><%= artwork.title %></td>
         <td><%= artwork.description %></td>
         <td><%= artwork.artistID %></td>
         <td><%= artwork.price %></td>
         <td><%= artwork.stock %></td>
-        <td><%= artwork.photos %></td>
+        <td><%= image_tag(@foto_name, size: "115x115", alt: "Edit Entry")%></td>
         <td><%= artwork.category %></td>
         <td><%=l artwork.created_at %></td>
         <td>
