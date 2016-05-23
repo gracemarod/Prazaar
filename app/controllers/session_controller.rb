@@ -7,10 +7,13 @@ class SessionController < ApplicationController
     artist = Artist.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
       # Log the user in and redirect to the user's show page.
+       puts "I'm logging in a user"
+       puts user
+       puts user.id
         log_in user
       	redirect_to user
     elsif artist && artist.authenticate(params[:session][:password])
-        log_in artist
+        log_in_artist artist
         redirect_to artist
     else
     	flash[:danger] = 'Invalid email/password combination' # Not quite right!
