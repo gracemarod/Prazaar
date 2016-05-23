@@ -14,8 +14,11 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
+
 //= require drifolio
 //= require jquery.easing.min
 //= require jquery.jribbble-1.0.1.ugly
 //= require jquery.nicescroll.min
+//= require wow.min
+//= require bootstrap
 //= require_tree .
