@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   resources :artworks
+  resources :artworks
+  resources :artworks
+  resources :artworks
   get 'session/new'
 
   get 'artists/new'
@@ -11,6 +14,8 @@ Rails.application.routes.draw do
   # root 'welcome#index'
 
   Rails.application.routes.draw do
+  resources :artworks
+  resources :artworks
   resources :artworks
   get 'artists/new'
 
@@ -27,8 +32,7 @@ Rails.application.routes.draw do
     delete 'logout'  => 'session#destroy'
     resources :users
     resources :artists
-    resources :artworks
-
+  
     get "artworks/new"
     #root 'artworks#index'
   end

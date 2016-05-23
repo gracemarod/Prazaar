@@ -50,3 +50,10 @@ group :production do
   gem 'rails_12factor', '0.0.2'
 end
 
+# Gems used only for assets and not required
+# in production environments by default.
+group :assets do
+    # See https://github.com/sstephenson/execjs#readme for more supported runtimes
+    #gem 'therubyracer'
+    gem 'twitter-bootstrap-rails'
+end

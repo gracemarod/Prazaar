@@ -1,37 +1,76 @@
-<%= form_for(@artwork) do |f| %>
-  <% if @artwork.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@artwork.errors.count, "error") %> prohibited this artwork from being saved:</h2>
+<%= form_for @artwork, :html => { :class => "form-horizontal artwork" } do |f| %>
 
-      <ul>
-      <% @artwork.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <% if @artwork.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@artwork.errors.count, "error") %> prohibited this artwork from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @artwork.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
+  <div class="form-group">
+    <%= f.label :title, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :title, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:title) %>
   </div>
-  <div class="field">
-    <%= f.label :price %><br>
-    <%= f.text_field :price %>
+  <div class="form-group">
+    <%= f.label :description, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :description, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:description) %>
   </div>
-  <div class="field">
-    <%= f.label :stock %><br>
-    <%= f.number_field :stock %>
+  <div class="form-group">
+    <%= f.label :artistID, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :artistID, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:artistID) %>
   </div>
-  <div class="field">
-    <%= f.label :photos %><br>
-    <%= f.text_field :photos %>
+  <div class="form-group">
+    <%= f.label :price, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :price, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:price) %>
   </div>
-  <div class="field">
-    <%= f.label :category %><br>
-    <%= f.text_field :category %>
+  <div class="form-group">
+    <%= f.label :stock, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :stock, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:stock) %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <%= f.label :photos, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :photos, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:photos) %>
   </div>
+  <div class="form-group">
+    <%= f.label :category, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :category, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:category) %>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                artworks_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
 <% end %>
