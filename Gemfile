@@ -34,6 +34,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 #Adding Bootsrap file
 gem 'bootstrap-sass'
+#optional. adds proper vendor prefixes to css code when it is compiled
+gem 'autoprefixer-rails'
 
 group :development, :test do
   gem 'sqlite3',     '1.3.9'
